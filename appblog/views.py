@@ -1,4 +1,4 @@
-import pickle
+import joblib
 from pathlib import Path
 
 from django.contrib.auth import authenticate, login, logout
@@ -108,8 +108,7 @@ def account_view(request):
 
 def _predict_with_model(feature_values):
     if MODEL_PATH.exists():
-        with MODEL_PATH.open("rb") as model_file:
-            model = pickle.load(model_file)
+        model = joblib.load(MODEL_PATH)
         result = model.predict([feature_values])[0]
         return int(result)
 
