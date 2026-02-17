@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Historique des prédictions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID patient</th>
+            <th>Nom</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Cp</th>
+            <th>Trestbps</th>
+            <th>Chol</th>
+            <th>Fbs</th>
+            <th>Restecg</th>
+            <th>Thalach</th>
+            <th>Exang</th>
+            <th>Oldpeak</th>
+            <th>Slope</th>
+            <th>Ca</th>
+            <th>Thal</th>
+            <th>Résultat</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in records %}
+        <tr>
+            <td>{{ row.patient_identifier }}</td>
+            <td>{{ row.patient_name }}</td>
+            <td>{{ row.sex }}</td>
+            <td>{{ row.age }}</td>
+            <td>{{ row.cp }}</td>
+            <td>{{ row.trestbps }}</td>
+            <td>{{ row.chol }}</td>
+            <td>{{ row.fbs }}</td>
+            <td>{{ row.restecg }}</td>
+            <td>{{ row.thalach }}</td>
+            <td>{{ row.exang }}</td>
+            <td>{{ row.oldpeak }}</td>
+            <td>{{ row.slope }}</td>
+            <td>{{ row.ca }}</td>
+            <td>{{ row.thal }}</td>
+            <td>{{ row.prediction }}</td>
+            <td>{{ row.created_at }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="17">Aucune prédiction enregistrée.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

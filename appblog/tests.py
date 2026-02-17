@@ -1,3 +1,1 @@
-from django.test import TestCase
-
-# Create your tests here.
+# Tests supprimés à la demande: les comptes et patients seront créés manuellement.

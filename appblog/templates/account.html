@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Compte utilisateur</h2>
+
+<form method="post" style="margin-bottom: 16px;">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="logout">
+    <button type="submit">Se déconnecter</button>
+</form>
+
+<h3>Changer le mot de passe</h3>
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+{% if success %}
+<p style="color: green;">{{ success }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    Nouveau mot de passe: <input type="password" name="password"><br><br>
+    Répéter mot de passe: <input type="password" name="password_repeat"><br><br>
+    <button type="submit">Changer mot de passe</button>
+</form>
+{% endblock %}

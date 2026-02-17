@@ -1,6 +1,7 @@
+{% extends "base.html" %}
 
-<h1>Welcome {{ user.username }}</h1>
-
-<p>Plateforme de détection cardiaque</p>
-
-<a href="/logout/">Logout</a>
+{% block content %}
+<h1>Bienvenue {{ user.username }}</h1>
+<p>Plateforme de prédiction des maladies cardiaques.</p>
+<p>Utilisez le menu pour gérer le compte, lancer une prédiction et consulter l'historique.</p>
+{% endblock %}
