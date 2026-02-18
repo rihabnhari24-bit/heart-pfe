@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/prediction.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Prédiction patient</h2>
+
+{% if not model_file_found %}
+<p class="info-warning">model.pkl introuvable: une règle simple temporaire est utilisée.</p>
+{% endif %}
+
+{% if error %}
+<p class="info-error">{{ error }}</p>
+{% endif %}
+{% if prediction_text %}
+<p class="info-success"><strong>Résultat:</strong> {{ prediction_text }}</p>
+{% endif %}
+
+<form method="post" class="prediction-form">
+    {% csrf_token %}
+
+    <div class="form-grid">
+        <div class="form-field">
+            <label>ID patient</label>
+            <input name="patient_identifier">
+        </div>
+        <div class="form-field">
+            <label>Nom patient</label>
+            <input name="patient_name">
+        </div>
+        <div class="form-field"><label>Age</label><input name="age"></div>
+        <div class="form-field"><label>Sex</label><input name="sex"></div>
+        <div class="form-field"><label>Cp</label><input name="cp"></div>
+        <div class="form-field"><label>Trestbps</label><input name="trestbps"></div>
+        <div class="form-field"><label>Chol</label><input name="chol"></div>
+        <div class="form-field"><label>Fbs</label><input name="fbs"></div>
+        <div class="form-field"><label>Restecg</label><input name="restecg"></div>
+        <div class="form-field"><label>Thalach</label><input name="thalach"></div>
+        <div class="form-field"><label>Exang</label><input name="exang"></div>
+        <div class="form-field"><label>Oldpeak</label><input name="oldpeak"></div>
+        <div class="form-field"><label>Slope</label><input name="slope"></div>
+        <div class="form-field"><label>Ca</label><input name="ca"></div>
+        <div class="form-field"><label>Thal</label><input name="thal"></div>
+    </div>
+
+    <div class="prediction-actions">
+        <button class="btn" type="submit">Prédire</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+.charts-note {
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.7;
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  border-left: 4px solid #2563eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 10px;
+}

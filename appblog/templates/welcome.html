@@ -1,6 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
 
-<h1>Welcome {{ user.username }}</h1>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+{% endblock %}
 
-<p>Plateforme de détection cardiaque</p>
-
-<a href="/logout/">Logout</a>
+{% block content %}
+<h1>Bienvenue {{ user.username }}</h1>
+<p class="welcome-text">Plateforme de prédiction des maladies cardiaques.</p>
+<p class="welcome-text">Utilisez le menu vertical à gauche pour gérer le compte, lancer une prédiction et consulter l'historique.</p>
+{% endblock %}

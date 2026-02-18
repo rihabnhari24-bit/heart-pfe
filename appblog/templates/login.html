@@ -1,11 +1,38 @@
-<h3>Login</h3>
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-image">
+        <img src="{% static 'img/img.png' %}" alt="Image médicale">
+    </div>
 
-<form method="post">
-{% csrf_token %}
+    <div class="login-form">
+        <div class="logo-container">
+            <img class="logo" src="{% static 'img/img4.png' %}" alt="Logo">
+        </div>
 
-Username: <input name="username"><br>
-Password: <input type="password" name="password"><br>
+        <h3>Login</h3>
 
-<button type="submit">Login</button>
-</form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
 
+        <form method="post">
+            {% csrf_token %}
+            <input name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+
+        <a class="register-btn" href="{% url 'register' %}">Créer un compte</a>
+    </div>
+</div>
+</body>
+</html>
