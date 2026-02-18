@@ -1,8 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/history.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>Historique des prédictions</h2>
+<h2 class="history-title">Historique des prédictions</h2>
 
+<div class="table-wrap">
 <table>
     <thead>
         <tr>
@@ -55,4 +61,5 @@
         {% endfor %}
     </tbody>
 </table>
+</div>
 {% endblock %}

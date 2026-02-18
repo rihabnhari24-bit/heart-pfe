@@ -1,6 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/charts.css' %}">
+{% endblock %}
 
 {% block content %}
 <h2>Graphes</h2>
-<p>Section réservée pour les graphes liés aux prédictions cardiaques (à faire plus tard).</p>
+<p class="charts-note">Section réservée pour les graphes liés aux prédictions cardiaques (à faire plus tard).</p>
 {% endblock %}
