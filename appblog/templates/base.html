@@ -9,7 +9,6 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-{% if user.is_authenticated %}
 <div class="app-shell">
     <aside class="sidebar">
         <div class="sidebar-logo">
@@ -18,10 +17,11 @@
         <h4>Menu principal</h4>
         <nav>
             <a href="{% url 'welcome' %}">Accueil</a>
-            <a href="{% url 'account' %}">Déconnexion / mot de passe</a>
+            <a href="{% url 'account' %}">Compte / mot de passe</a>
             <a href="{% url 'prediction' %}">Prédiction</a>
             <a href="{% url 'history' %}">Historique</a>
             <a href="{% url 'charts' %}">Graphes</a>
+            <a href="{% url 'logout' %}">Déconnexion</a>
         </nav>
     </aside>
 
@@ -31,8 +31,5 @@
         </div>
     </main>
 </div>
-{% else %}
-{% block content %}{% endblock %}
-{% endif %}
 </body>
 </html>
