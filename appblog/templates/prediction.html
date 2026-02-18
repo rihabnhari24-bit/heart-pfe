@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Prédiction patient</h2>
+
+{% if not model_file_found %}
+<p style="color: orange;">model.pkl introuvable: une règle simple temporaire est utilisée.</p>
+{% endif %}
+
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+{% if prediction_text %}
+<p style="color: green;"><strong>Résultat:</strong> {{ prediction_text }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+
+    ID patient: <input name="patient_identifier"><br>
+    Nom patient: <input name="patient_name"><br><br>
+
+    Age: <input name="age"><br>
+    Sex: <input name="sex"><br>
+    Cp: <input name="cp"><br>
+    Trestbps: <input name="trestbps"><br>
+    Chol: <input name="chol"><br>
+    Fbs: <input name="fbs"><br>
+    Restecg: <input name="restecg"><br>
+    Thalach: <input name="thalach"><br>
+    Exang: <input name="exang"><br>
+    Oldpeak: <input name="oldpeak"><br>
+    Slope: <input name="slope"><br>
+    Ca: <input name="ca"><br>
+    Thal: <input name="thal"><br><br>
+
+    <button type="submit">Prédire</button>
+</form>
+{% endblock %}

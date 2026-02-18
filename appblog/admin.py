@@ -1,3 +1,4 @@
 from django.contrib import admin
 
-# Register your models here.
+# Aucun enregistrement admin personnalisé.
+# Le fonctionnement principal de l'application n'en dépend pas.

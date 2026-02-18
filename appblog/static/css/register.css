@@ -1,0 +1,111 @@
+/* ============================= */
+/* Background image médicale + dégradé */
+/* ============================= */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/static/img/img6.png") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* ============================= */
+/* Body : centrer le formulaire  */
+/* ============================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(rgba(29, 78, 216, 0.4), rgba(96, 165, 250, 0.4));
+}
+
+/* ============================= */
+/* Conteneur du formulaire       */
+/* ============================= */
+.register-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    width: 350px;
+    text-align: center;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* ============================= */
+/* Titre du formulaire           */
+/* ============================= */
+.register-container h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333333;
+}
+
+/* ============================= */
+/* Champs du formulaire          */
+/* ============================= */
+.register-container input {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    font-size: 16px;
+}
+
+/* ============================= */
+/* Bouton du formulaire          */
+/* ============================= */
+.register-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1D4ED8;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #2563EB;
+}
+
+/* ============================= */
+/* Message d'erreur              */
+/* ============================= */
+.register-container .error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* ============================= */
+/* Lien retour login             */
+/* ============================= */
+.register-container .login-link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+}
+
+.register-container .login-link:hover {
+    text-decoration: underline;
+}
